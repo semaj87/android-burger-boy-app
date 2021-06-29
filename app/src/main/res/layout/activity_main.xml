@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:theme="@style/Theme.MaterialComponents"
+    tools:context=".MainActivity">
+
+    <FrameLayout
+        android:id="@+id/fl_header_image"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/burger_header_image_height"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/content_description"
+            android:scaleType="fitXY"
+            android:src="@drawable/burger_screen_main_image" />
+
+        <ImageView
+            android:layout_width="@dimen/burger_boy_logo_width_size"
+            android:layout_height="@dimen/burger_boy_logo_height_size"
+            android:layout_gravity="center"
+            android:contentDescription="@string/app_name"
+            android:scaleType="fitCenter"
+            android:src="@drawable/burger_main_screen" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tvBurgerBoyOrderScreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:text="@string/burger_boy_order_text"
+        android:textColor="@color/color_primary_text"
+        android:textSize="@dimen/title_textSize"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fl_header_image" />
+
+    <TextView
+        android:id="@+id/tvOrderText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/burger_boy_order_statement_margin_top"
+        android:text="@string/burger_boy_order_statement"
+        android:textColor="@color/color_primary_text"
+        android:textSize="@dimen/title_textSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvBurgerBoyOrderScreen" />
+
+    <RadioGroup
+        android:id="@+id/burger_boy_meat_selection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/burger_boy_meat_menu_selection_margin_top"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvOrderText">
+
+        <RadioButton
+            android:id="@+id/beef"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/burger_boy_theme_colour"
+            android:checked="true"
+            android:text="@string/burger_boy_beef"
+            android:textColor="@color/color_primary_text" />
+
+        <RadioButton
+            android:id="@+id/chicken"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/burger_boy_theme_colour"
+            android:text="@string/burger_boy_chicken"
+            android:textColor="@color/color_primary_text" />
+
+        <RadioButton
+            android:id="@+id/lamb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/burger_boy_theme_colour"
+            android:text="@string/burger_boy_lamb"
+            android:textColor="@color/color_primary_text" />
+
+        <RadioButton
+            android:id="@+id/pork"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/burger_boy_theme_colour"
+            android:text="@string/burger_boy_pork"
+            android:textColor="@color/color_primary_text" />
+
+        <RadioButton
+            android:id="@+id/bean_patty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/burger_boy_theme_colour"
+            android:text="@string/burger_boy_bean_patty"
+            android:textColor="@color/color_primary_text" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tvToppings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/burger_boy_order_statement_margin_top"
+        android:text="@string/burger_boy_toppings"
+        android:textColor="@color/burger_boy_theme_colour"
+        android:textSize="@dimen/toppings_textSize"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/burger_boy_meat_selection" />
+
+        <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvToppings">
+
+        <CheckBox
+            android:id="@+id/toppingLettuce"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/burger_boy_theme_colour"
+            android:text="@string/topping_lettuce"
+            android:textColor="@color/color_primary_text"
+            app:layout_constraintEnd_toStartOf="@+id/toppingOnions"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/toppingBBQ"
+            tools:layout_editor_absoluteY="366dp" />
+
+        <CheckBox
+            android:id="@+id/toppingMayo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/burger_boy_theme_colour"
+            android:text="@string/topping_mayo"
+            android:textColor="@color/color_primary_text"
+            app:layout_constraintEnd_toStartOf="@+id/toppingPickles"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/toppingCheese"
+            tools:layout_editor_absoluteY="414dp" />
+
+        <CheckBox
+            android:id="@+id/toppingMustard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/burger_boy_theme_colour"
+            android:text="@string/topping_mustard"
+            android:textColor="@color/color_primary_text"
+            app:layout_constraintEnd_toStartOf="@+id/toppingTomatoes"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/toppingKetchup"
+            tools:layout_editor_absoluteY="462dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.917"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvToppings">
+
+        <CheckBox
+            android:id="@+id/toppingOnions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/burger_boy_theme_colour"
+            android:text="@string/topping_onions"
+            android:textColor="@color/color_primary_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/toppingLettuce"
+            tools:layout_editor_absoluteY="366dp" />
+
+        <CheckBox
+            android:id="@+id/toppingPickles"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/burger_boy_theme_colour"
+            android:text="@string/topping_pickles"
+            android:textColor="@color/color_primary_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/toppingMayo"
+            tools:layout_editor_absoluteY="414dp" />
+
+        <CheckBox
+            android:id="@+id/toppingTomatoes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/burger_boy_theme_colour"
+            android:text="@string/topping_tomatoes"
+            android:textColor="@color/color_primary_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/toppingMustard"
+            tools:layout_editor_absoluteY="462dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.109"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvToppings">
+
+        <CheckBox
+            android:id="@+id/toppingCheese"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/burger_boy_theme_colour"
+            android:text="@string/topping_cheese"
+            android:textColor="@color/color_primary_text"
+            app:layout_constraintEnd_toStartOf="@+id/toppingMayo"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="394dp" />
+
+        <CheckBox
+            android:id="@+id/toppingBBQ"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/burger_boy_theme_colour"
+            android:text="@string/topping_bbq"
+            android:textColor="@color/color_primary_text"
+            app:layout_constraintEnd_toStartOf="@+id/toppingLettuce"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="346dp" />
+
+        <CheckBox
+            android:id="@+id/toppingKetchup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/burger_boy_theme_colour"
+            android:text="@string/topping_ketchup"
+            android:textColor="@color/color_primary_text"
+            app:layout_constraintEnd_toStartOf="@+id/toppingMustard"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="442dp" />
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@color/burger_boy_theme_colour"
+        android:foreground="?attr/selectableItemBackground"
+        android:gravity="center"
+        android:text="@string/burger_boy_order"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.8" />
+
+    <TextView
+        android:id="@+id/tvOrderSummary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text=""
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="@color/color_primary_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnOrder" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="burger_header_image_height">100dp</dimen>
+    <dimen name="burger_boy_logo_width_size">100dp</dimen>
+    <dimen name="burger_boy_logo_height_size">100dp</dimen>
+
+    <dimen name="title_textSize">18sp</dimen>
+    <dimen name="toppings_textSize">18sp</dimen>
+    <dimen name="burger_boy_order_statement_margin_top">40dp</dimen>
+    <dimen name="burger_boy_meat_menu_selection_margin_top">15dp</dimen>
+
+    <dimen name="toppings_margin_top">20dp</dimen>
+</resources>
